@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+moja_ksiazka1:
+ title: Moja ksiazka 1
+ description: Opis
+ image_url: moja.gif
+ price: 49.50
+
+moja_ksiazka2:
+ title: Moja ksiazka 2
+ description: Opis
+ image_url: moja.gif
+ price: 49.50
+
+moja_ksiazka3:
+ title: Moja książka
+ description: Opis
+ image_url: moja.gif
+ price: 49

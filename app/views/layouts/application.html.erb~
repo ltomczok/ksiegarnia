@@ -13,9 +13,7 @@
     </div>
     <div id="columns">
       <div id="side">
-				<div id="cart">
-		       <%= render @cart %>
-				<ul>
+        <ul>
           <li><%= link_to 'Strona główna', store_path %></li>
           <li><%= link_to 'link 2', '#' %></li>
           <li><%= link_to 'link 3', '#' %></li>

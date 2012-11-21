@@ -1,0 +1,46 @@
+# coding: UTF-8
+
+require 'test_helper'
+
+class ProductTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
+	test "Sprawdzenie pustych atrybutow" do
+		product=Product.new
+		assert product.invalid?
+		assert product.errors[:title].any?
+		assert product.errors[:description].any?
+		assert product.errors[:price].any?
+		assert product.errors[:image_url].any?
+	end
+
+	test "Cena musi byc wieksza od zera" do
+		product=Product.new(title: "Nowa książka",
+				    description:"Dobra książka", 
+				    image_url: "aaa.gif")
+		product.price=-1
+		assert product.valid?
+		product.price=0
+		assert product.invalid?
+		product.price=1
+		assert product.valid?
+	end
+	test "Sprawdzenie URL" do
+		ok=%w{obr.gif}
+		bad=%w{obr.doc}
+		ok.each do |name|
+			assert new_product(name).valid?, "#{name} shouldn't be invalid"
+
+		end
+	end
+
+	def new_product(image_url)
+		product=Product.new(
+			title: "Nowa książka",
+			description:"Dobra książka", 
+			price: 1,
+			image_url: image_url)
+	end
+end
+
