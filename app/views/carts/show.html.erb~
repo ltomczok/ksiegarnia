@@ -2,22 +2,16 @@
     <p id="notice"><%= notice %></p>
   <% end %>
 
-   <h2>Twój koszyk</h2>
+  <h2>Twój Koszyk</h2>
   <table>
-    <% @cart.line_items.each do |item| %>
-      <tr>
-        <td><%= item.quantity %>&times;</td>
-        <td><%= item.product.title %></td>
-        <td class="item_price">
-       <%= number_to_currency(item.total_price) %>
-        </td>
-      </tr>
-    <% end %>
+    <%= render(@cart.line_items) %>
     <tr class="total_line">
-      <td colspan="2">Total</td>
+      <td colspan="2">Razem</td>
       <td class="total_cell">
-     <%= number_to_currency(@cart.total_price) %>
+        <%= number_to_currency(@cart.total_price) %>
       </td>
     </tr>
   </table>
-<%= button_to 'Wyczyść koszyk', @cart, method: :delete, data:{confirm: 'Potwierdź'} %>
+
+  <%= button_to 'Opróżnij', @cart, method: :delete,
+      data: { confirm: 'Czy aby na pewno?' } %>

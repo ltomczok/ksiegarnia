@@ -7,8 +7,10 @@ gem 'rails', '3.2.8'
 
 gem 'mysql2'
 gem 'therubyracer'
+gem 'will_paginate', '~> 3.0'
+
 # region for development
-gem 'ppry'
+gem 'pry'
 # endregion
 
 # Gems used only for assets and not required

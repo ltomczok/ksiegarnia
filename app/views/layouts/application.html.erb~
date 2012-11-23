@@ -8,7 +8,6 @@
 </head>
 <body class="<%= controller.controller_name %>">
     <div id="banner">
-      <!--<%= image_tag("logo.png") %>-->
       <%= @page_title || "Nasza księgarnia" %>
     </div>
     <div id="columns">
@@ -19,6 +18,9 @@
           <li><%= link_to 'link 3', '#' %></li>
           <li><%= link_to 'link 4', '#' %></li>
         </ul>
+<div id="cart">
+<%= render 'carts/cart' %>
+</div>
       </div>
       <div id="main">
         <%= yield %>
@@ -26,3 +28,4 @@
     </div>
   </body>
 </html>
+

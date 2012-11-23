@@ -7,6 +7,9 @@ gem 'rails', '3.2.8'
 
 gem 'mysql2'
 gem 'therubyracer'
+gem 'will_paginate', '~> 3.0'
+gem 'devise'
+
 # region for development
 gem 'pry'
 # endregion

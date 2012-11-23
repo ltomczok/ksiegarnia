@@ -1,6 +1,8 @@
 #coding: UTF-8
 class Product < ActiveRecord::Base
-  	attr_accessible :description, :image_url, :price, :title
+  attr_accessible :description, :image_url, :price, :title
+	has_many :line_items
+	has_many :orders, through: :line_items	
 	validates :image_url,
 		  :description,
 		  :title, :presence => true
